@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Talent Selector</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero-card">
+        <div>
+          <p class="eyebrow">Smart Talent Selector</p>
+          <h1>AI-powered hiring decisions with clarity.</h1>
+          <p class="hero-copy">
+            Build the perfect talent shortlist in seconds. Analyze candidate fit, surface strengths,
+            and get AI coaching suggestions from a modern dashboard.
+          </p>
+        </div>
+        <div class="hero-chart">
+          <div class="badge">AI Match</div>
+          <div class="metric">
+            <span>92%</span>
+            <small>candidate-ready score</small>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="grid-2">
+          <article class="panel">
+            <h2>Candidate profile builder</h2>
+            <p>Enter the job focus and candidate details, then generate a smart fit report.</p>
+            <form id="talent-form" class="form-card">
+              <label>
+                Role to fill
+                <input id="role-input" list="role-list" type="text" placeholder="Lead Product Designer" required />
+                <datalist id="role-list">
+                  <option value="Lead Product Designer"></option>
+                  <option value="Senior Software Engineer"></option>
+                  <option value="Marketing Manager"></option>
+                  <option value="Data Analyst"></option>
+                  <option value="Customer Success Lead"></option>
+                  <option value="HR Business Partner"></option>
+                </datalist>
+              </label>
+              <label>
+                Core skills (comma separated)
+                <input id="skills-input" list="skills-list" type="text" placeholder="UI design, product research, Figma" required />
+                <datalist id="skills-list">
+                  <option value="UI design"></option>
+                  <option value="product research"></option>
+                  <option value="Figma"></option>
+                  <option value="JavaScript"></option>
+                  <option value="data visualization"></option>
+                  <option value="team leadership"></option>
+                </datalist>
+              </label>
+              <label>
+                Culture focus
+                <input id="culture-input" list="culture-list" type="text" placeholder="collaborative, fast-moving" />
+                <datalist id="culture-list">
+                  <option value="collaborative"></option>
+                  <option value="fast-moving"></option>
+                  <option value="remote-first"></option>
+                  <option value="customer-centric"></option>
+                  <option value="innovative"></option>
+                  <option value="growth-oriented"></option>
+                </datalist>
+              </label>
+              <label>
+                Candidate summary
+                <textarea id="description-input" rows="5" placeholder="Experienced designer with cross-functional collaboration, research-driven product design, and rapid prototyping."></textarea>
+              </label>
+              <div class="button-row">
+                <button type="submit" class="btn primary">Analyze fit</button>
+                <button type="button" id="smart-ai-button" class="btn secondary">Ask AI</button>
+              </div>
+            </form>
+          </article>
+
+          <article class="panel summary-panel">
+            <div class="panel-header">
+              <h2>Smart summary</h2>
+              <span id="summary-tag">Ready for input</span>
+            </div>
+            <div class="result-card" id="result-card">
+              <p class="result-note">Complete the form to see a live talent score and AI insight.</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel wide-panel">
+          <h2>AI Career Concierge</h2>
+          <p>Use smart prompts to create candidate recommendations, interview questions, or fit summaries.</p>
+          <div class="ai-box">
+            <label for="ai-prompt">Ask the AI</label>
+            <textarea id="ai-prompt" rows="4" placeholder="Write a short hiring summary for this candidate and suggest one improvement area."></textarea>
+            <button id="generate-ai" class="btn primary">Generate insight</button>
+            <div class="ai-output" id="ai-output">No AI request yet.</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
