@@ -1,15 +1,25 @@
 :root {
   color-scheme: dark;
-  --bg: #070b16;
-  --panel: rgba(19, 30, 57, 0.98);
-  --panel-soft: rgba(30, 47, 78, 0.86);
-  --text: #f5f8ff;
-  --muted: #a6b1c7;
-  --border: rgba(255, 255, 255, 0.12);
-  --accent: #7c5cff;
-  --accent-2: #34d5ff;
-  --success: #8cf89a;
-  --warn: #ffd572;
+  --bg: #071627;
+  --panel: rgba(3, 24, 54, 0.95);
+  --panel-soft: rgba(8, 34, 70, 0.88);
+  --text: #e8f5ff;
+  --muted: #9abbd9;
+  --border: rgba(92, 173, 255, 0.2);
+  --accent: #5ac8ff;
+  --accent-2: #2f7efc;
+  --success: #7be5ff;
+  --warn: #8dc6ff;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(90, 200, 255, 0.18); }
+  50% { box-shadow: 0 0 24px 12px rgba(90, 200, 255, 0.12); }
+}
+
+@keyframes floatRise {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 * {
@@ -19,9 +29,9 @@
 html, body {
   margin: 0;
   min-height: 100%;
-  background: radial-gradient(circle at top, rgba(72, 72, 217, 0.18), transparent 30%),
-    radial-gradient(circle at 80% 0%, rgba(68, 211, 255, 0.14), transparent 24%),
-    radial-gradient(circle at 10% 100%, rgba(132, 35, 255, 0.16), transparent 22%),
+  background: radial-gradient(circle at top, rgba(90, 200, 255, 0.16), transparent 24%),
+    radial-gradient(circle at 80% 0%, rgba(47, 126, 252, 0.10), transparent 22%),
+    radial-gradient(circle at 10% 100%, rgba(60, 130, 220, 0.14), transparent 24%),
     var(--bg);
   color: var(--text);
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
@@ -43,8 +53,9 @@ body {
   padding: 32px;
   border: 1px solid var(--border);
   border-radius: 28px;
-  background: linear-gradient(180deg, rgba(16, 24, 56, 0.96), rgba(9, 13, 30, 0.98));
+  background: linear-gradient(180deg, rgba(6, 34, 70, 0.96), rgba(3, 18, 42, 0.99));
   margin-bottom: 28px;
+  animation: floatRise 10s ease-in-out infinite;
 }
 
 .eyebrow {
@@ -73,17 +84,8 @@ body {
   place-items: center;
   padding: 32px;
   border-radius: 24px;
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.hero-chart .badge {
-  display: inline-flex;
-  padding: 0.8rem 1.2rem;
-  border-radius: 999px;
-  background: rgba(124, 92, 255, 0.22);
-  color: var(--accent);
-  font-weight: 700;
-  margin-bottom: 1.8rem;
+  background: rgba(90, 200, 255, 0.18);
+  animation: pulseGlow 4s ease-in-out infinite;
 }
 
 .hero-chart .metric {
@@ -94,6 +96,11 @@ body {
   font-size: 3.8rem;
   font-weight: 800;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.hero-chart:hover .metric span {
+  transform: scale(1.05);
 }
 
 .hero-chart .metric small {
@@ -111,6 +118,12 @@ body {
   border: 1px solid var(--border);
   border-radius: 24px;
   padding: 28px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(15, 70, 140, 0.12);
 }
 
 .panel h2 {
@@ -153,10 +166,21 @@ body {
   font-size: 0.96rem;
   font-weight: 700;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(47, 126, 252, 0.14);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(47, 126, 252, 0.14);
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background: linear-gradient(135deg, #ff9f43, #ff6240);
   color: #fff;
 }
 
@@ -233,7 +257,7 @@ body {
   display: inline-flex;
   padding: 10px 14px;
   border-radius: 999px;
-  background: rgba(124, 92, 255, 0.14);
+  background: rgba(255, 159, 67, 0.14);
   color: var(--text);
   font-size: 0.95rem;
 }

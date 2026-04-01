@@ -3,25 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Smart Talent Selector</title>
+    <title>Talent Tasting Room</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="page-shell">
       <header class="hero-card">
         <div>
-          <p class="eyebrow">Smart Talent Selector</p>
-          <h1>AI-powered hiring decisions with clarity.</h1>
+          <p class="eyebrow">Talent Tasting Room</p>
+          <h1>Discover the next hire with appetite and precision.</h1>
           <p class="hero-copy">
-            Build the perfect talent shortlist in seconds. Analyze candidate fit, surface strengths,
-            and get AI coaching suggestions from a modern dashboard.
+            Craft a standout shortlist with vivid candidate flavor notes, clear fit signals,
+            and insight that feels more like a menu than a report.
           </p>
         </div>
         <div class="hero-chart">
-          <div class="badge">AI Match</div>
+          <div class="badge">Talent Score</div>
           <div class="metric">
             <span>92%</span>
-            <small>candidate-ready score</small>
+            <small>ready-to-hire rating</small>
           </div>
         </div>
       </header>
@@ -30,7 +30,7 @@
         <section class="grid-2">
           <article class="panel">
             <h2>Candidate profile builder</h2>
-            <p>Enter the job focus and candidate details, then generate a smart fit report.</p>
+            <p>Enter the role, flavor notes, and profile details to create a tempting shortlist.</p>
             <form id="talent-form" class="form-card">
               <label>
                 Role to fill
@@ -73,31 +73,31 @@
                 <textarea id="description-input" rows="5" placeholder="Experienced designer with cross-functional collaboration, research-driven product design, and rapid prototyping."></textarea>
               </label>
               <div class="button-row">
-                <button type="submit" class="btn primary">Analyze fit</button>
-                <button type="button" id="smart-ai-button" class="btn secondary">Ask AI</button>
+                <button type="submit" class="btn primary">Preview candidate</button>
+                <button type="button" id="smart-ai-button" class="btn secondary">Ask advisor</button>
               </div>
             </form>
           </article>
 
           <article class="panel summary-panel">
             <div class="panel-header">
-              <h2>Smart summary</h2>
+              <h2>Talent tasting note</h2>
               <span id="summary-tag">Ready for input</span>
             </div>
             <div class="result-card" id="result-card">
-              <p class="result-note">Complete the form to see a live talent score and AI insight.</p>
+              <p class="result-note">Complete the form to see candidate flavor, fit, and next-step ideas.</p>
             </div>
           </article>
         </section>
 
         <section class="panel wide-panel">
-          <h2>AI Career Concierge</h2>
-          <p>Use smart prompts to create candidate recommendations, interview questions, or fit summaries.</p>
+          <h2>Career Concierge</h2>
+          <p>Use quick prompts to create candidate recommendations, interview questions, or fit summaries.</p>
           <div class="ai-box">
-            <label for="ai-prompt">Ask the AI</label>
-            <textarea id="ai-prompt" rows="4" placeholder="Write a short hiring summary for this candidate and suggest one improvement area."></textarea>
-            <button id="generate-ai" class="btn primary">Generate insight</button>
-            <div class="ai-output" id="ai-output">No AI request yet.</div>
+            <label for="ai-prompt">Ask for a recommendation</label>
+            <textarea id="ai-prompt" rows="4" placeholder="Summarize this candidate and suggest one next step."></textarea>
+            <button id="generate-ai" class="btn primary">Serve recommendation</button>
+            <div class="ai-output" id="ai-output">No recommendation yet.</div>
           </div>
         </section>
       </main>
